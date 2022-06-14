@@ -1,0 +1,352 @@
+{
+	"info": {
+		"_postman_id": "4cd43f44-1c37-49a0-89a3-6cde03b69330",
+		"name": "3 work",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "first",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://162.55.220.72:5005/first",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"first"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "object_info_3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"}); \r",
+							"pm.test(\"response\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});\r",
+							"\r",
+							"let reqq = {\r",
+							"    \"age\": \"24\",\r",
+							"    \"family\": {\r",
+							"        \"children\": [\r",
+							"            [\r",
+							"                \"Alex\",\r",
+							"                24\r",
+							"            ],\r",
+							"            [\r",
+							"                \"Kate\",\r",
+							"                12\r",
+							"            ]\r",
+							"        ],\r",
+							"        \"pets\": {\r",
+							"            \"cat\": {\r",
+							"                \"age\": 3,\r",
+							"                \"name\": \"Sunny\"\r",
+							"            },\r",
+							"            \"dog\": {\r",
+							"                \"age\": 4,\r",
+							"                \"name\": \"Luky\"\r",
+							"            }\r",
+							"        },\r",
+							"        \"u_salary_1_5_year\": 8000\r",
+							"    },\r",
+							"    \"name\": \"Alex\",\r",
+							"    \"salary\": 2000\r",
+							"}\r",
+							"\r",
+							"pm.test(\"Name\", function () {\r",
+							"    pm.expect(reqq.name).to.eql(\"Alex\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Age\", function () {\r",
+							"    pm.expect(reqq.age).to.eql(\"24\")\r",
+							"});\r",
+							"\r",
+							"\r",
+							"let family_1 = {\r",
+							"        \"children\": [\r",
+							"            [\r",
+							"                \"Alex\",\r",
+							"                24\r",
+							"            ],\r",
+							"            [\r",
+							"                \"Kate\",\r",
+							"                12\r",
+							"            ]\r",
+							"        ],\r",
+							"        \"pets\": {\r",
+							"            \"cat\": {\r",
+							"                \"age\": 3,\r",
+							"                \"name\": \"Sunny\"\r",
+							"            },\r",
+							"            \"dog\": {\r",
+							"                \"age\": 4,\r",
+							"                \"name\": \"Luky\"\r",
+							"            }\r",
+							"        },\r",
+							"        \"u_salary_1_5_year\": 8000\r",
+							"    }\r",
+							"\r",
+							"    pm.test(\"DOG\", function () {\r",
+							"    pm.expect(family_1.pets.dog.name).to.eql(\"Luky\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"DOGAGE\", function () {\r",
+							"    pm.expect(family_1.pets.dog.age).to.eql(\"4\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": \"24\",\r\n    \"family\": {\r\n        \"children\": [\r\n            [\r\n                \"Alex\",\r\n                24\r\n            ],\r\n            [\r\n                \"Kate\",\r\n                12\r\n            ]\r\n        ],\r\n        \"pets\": {\r\n            \"cat\": {\r\n                \"age\": 3,\r\n                \"name\": \"Sunny\"\r\n            },\r\n            \"dog\": {\r\n                \"age\": 4,\r\n                \"name\": \"Luky\"\r\n            }\r\n        },\r\n        \"u_salary_1_5_year\": 8000\r\n    },\r\n    \"name\": \"Alex\",\r\n    \"salary\": 2000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://162.55.220.72:5005/object_info_3?name=Alex&age=24&salary=2000",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"object_info_3"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Alex"
+						},
+						{
+							"key": "age",
+							"value": "24"
+						},
+						{
+							"key": "salary",
+							"value": "2000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user_info_3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"let req = request.data;\r",
+							"\r",
+							"let person = {\r",
+							"    \"age\": \"24\",\r",
+							"    \"family\": {\r",
+							"        \"children\": [\r",
+							"            [\r",
+							"                \"Alex\",\r",
+							"                24,\r",
+							"        \r",
+							"            ],\r",
+							"            [\r",
+							"                \"Kate\",\r",
+							"                12\r",
+							"            ]\r",
+							"        ],\r",
+							"        \"u_salary_1_5_year\": 8000\r",
+							"    },\r",
+							"    \"name\": \"Alex\",\r",
+							"    \"salary\": 2000\r",
+							"}\r",
+							"\r",
+							"pm.test(\"Name\", function () {\r",
+							"    pm.expect(person.name).to.eql(\"Alex\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Age\", function () {\r",
+							"    pm.expect(person.age).to.eql(\"24\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"REQ1\", function () {\r",
+							"    pm.expect(req.name).to.eql(\"Alex\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"REQ2\", function () {\r",
+							"    pm.expect(req.age).to.eql(\"24\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"REQ3\", function () {\r",
+							"    pm.expect(req.salary).to.eql(\"2000\")\r",
+							"});\r",
+							"\r",
+							"let family = {\r",
+							"    \"family\": {\r",
+							"        \"children\": [\r",
+							"            [\r",
+							"                \"Alex\",\r",
+							"                24,\r",
+							"        \r",
+							"            ],\r",
+							"            [\r",
+							"                \"Kate\",\r",
+							"                12\r",
+							"            ]\r",
+							"        ],\r",
+							"        \"u_salary_1_5_year\": 8000\r",
+							"    }\r",
+							"}\r",
+							"\r",
+							"let salary_1 = req.salary * 4\r",
+							"\r",
+							"pm.test(\"salary1\", function () {\r",
+							"    pm.expect(person.salary).to.eql(salary_1)\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Alex",
+							"type": "default"
+						},
+						{
+							"key": "age",
+							"value": "24",
+							"type": "default"
+						},
+						{
+							"key": "salary",
+							"value": "2000",
+							"type": "default"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://162.55.220.72:5005/user_info_3",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "login",
+							"value": "Alex",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "12sdswqs",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://162.55.220.72:5005/login",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
